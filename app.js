@@ -31,15 +31,19 @@ function sortearAmigo() {
         .map(value => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
         .map(({ value }) => value);
+let winner = listaSorteadaEmbaralhada[0];
 
-    // Display the sorted list
-    let resultadoElement = document.getElementById('resultado');
-    resultadoElement.innerHTML = '';
-    listaSorteadaEmbaralhada.forEach(amigo => {
-        let newListItem = document.createElement('li');
-        newListItem.textContent = amigo;
-        resultadoElement.appendChild(newListItem);
-    });
+let resultadoElement = document.getElementById('resultado');
+resultadoElement.innerHTML = ' ';
+
+let winnerItem = document.createElement('li');
+winnerItem.textContent = `O amigo sorteado é: ${winner}`;
+winnerItem.style.fontWeight = 'bold';
+resultadoElement.appendChild(winnerItem);
+
+listaDeAmigos = [];
+document.getElementById('listaAmigos').innerHTML = '';
+
 
     alert('Sorteio realizado com sucesso!');
 }

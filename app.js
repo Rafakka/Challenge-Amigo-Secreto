@@ -4,6 +4,9 @@ function adicionarAmigo() {
     let campoTexto = document.getElementById('amigo');
     let amigoText = campoTexto.value.trim();
 
+    let resultadoElement = document.getElementById('resultado');
+    resultadoElement.innerHTML = '';
+
     if (amigoText === '') {
         alert('Por favor, insira um nome.');
         return;
